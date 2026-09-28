@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="avatar-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="avatar-fill" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#cbd5e1" />
+      <stop offset="100%" stop-color="#94a3b8" />
+    </linearGradient>
+    <clipPath id="circle-clip">
+      <circle cx="100" cy="100" r="100" />
+    </clipPath>
+  </defs>
+  
+  <g clip-path="url(#circle-clip)">
+    <!-- Fundo do avatar -->
+    <rect width="200" height="200" fill="url(#avatar-bg)" />
+    
+    <!-- Cabeça do perfil -->
+    <circle cx="100" cy="74" r="36" fill="url(#avatar-fill)" />
+    
+    <!-- Ombros/Corpo do perfil -->
+    <path d="M36 180 C36 138, 64 126, 100 126 C136 126, 164 138, 164 180 Z" fill="url(#avatar-fill)" />
+  </g>
+</svg>

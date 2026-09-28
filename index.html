@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Gerenciador de Portfólio Profissional - Exibição de projetos, gerenciamento de conteúdo e contato direto.">
+    <meta name="keywords" content="portfolio, desenvolvedor, projetos, full stack, frontend, web app">
+    <meta name="author" content="Portfolio Manager">
+    <title>Gerenciador de Portfólio | Portfólio & Painel de Controle</title>
+
+    <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Estilos da Aplicação -->
+    <link rel="stylesheet" href="css/style.css?v=2">
+</head>
+
+<body>
+
+    <!-- =========================================================================
+       VISÃO PÚBLICA (PORTFÓLIO)
+       ========================================================================= -->
+    <div id="view-public" class="view-public">
+
+        <!-- BARRA DE NAVEGAÇÃO -->
+        <header class="navbar">
+            <div class="nav-container">
+                <a href="#hero" class="nav-logo">
+                    <span>Portfólio</span><span class="logo-accent">.dev</span>
+                </a>
+
+                <!-- Links Públicos e Ações -->
+                <nav id="nav-links" class="nav-links">
+                    <a href="#hero" class="nav-link">Início</a>
+                    <a href="#about" class="nav-link">Sobre</a>
+                    <a href="#projects" class="nav-link">Projetos</a>
+                    <a href="#contact" class="nav-link">Contato</a>
+
+                    <!-- Botões de Autenticação / Painel -->
+                    <button id="btn-nav-login" class="btn btn-sm btn-outline open-login-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                            <polyline points="10 17 15 12 10 7"></polyline>
+                            <line x1="15" y1="12" x2="3" y2="12"></line>
+                        </svg>
+                        <span>Entrar</span>
+                    </button>
+
+                    <button id="btn-nav-dashboard" class="btn btn-sm btn-primary hidden">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="14" width="7" height="7"></rect>
+                            <rect x="3" y="14" width="7" height="7"></rect>
+                        </svg>
+                        <span>Painel Admin</span>
+                    </button>
+                </nav>
+
+                <!-- Botão Menu Mobile -->
+                <button id="mobile-menu-toggle" class="mobile-toggle" aria-label="Abrir menu de navegação">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- SEÇÃO HERO -->
+        <section class="hero-section" id="hero">
+            <div class="hero-glow"></div>
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="status-indicator"></span>
+                        <span>Disponível para novos projetos & contratos</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Olá, eu sou <br>
+                        <span class="profile-name text-gradient">Andrey Alves</span>
+                    </h1>
+
+                    <p class="hero-subtitle profile-bio">
+                        Criando soluções web modernas, responsivas e de alta performance. Apaixonado por interfaces
+                        elegantes, arquiteturas limpas e experiências digitais memoráveis.
+                    </p>
+
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-lg btn-primary">
+                            <span>Explorar Projetos</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                        <a href="#contact" class="btn btn-lg btn-secondary">Entrar em Contato</a>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon profile-github"
+                            aria-label="GitHub">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
+                            </svg>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon profile-linkedin"
+                            aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon profile-website"
+                            aria-label="Website">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path
+                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card Visual do Perfil -->
+                <div class="hero-visual">
+                    <div class="avatar-card">
+                        <div class="avatar-ring">
+                            <img class="profile-avatar"
+                                src="img/default-avatar.svg"
+                                alt="Foto de Perfil">
+                        </div>
+                        <div class="avatar-info-box">
+                            <h3 class="profile-name">Andrey Alves</h3>
+                            <span class="profile-role">Desenvolvedor Full Stack & UI/UX</span>
+                            <span class="profile-location">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                Alagoas, Brasil
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO SOBRE & HABILIDADES -->
+        <section class="section bg-alt" id="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div>
+                        <span class="section-tag">Sobre Mim</span>
+                        <h2 class="section-title">Transformando ideias em código e impacto real</h2>
+                        <p class="profile-bio"
+                            style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 1.05rem;">
+                            Criando soluções web modernas, responsivas e de alta performance. Apaixonado por interfaces
+                            elegantes, arquiteturas limpas e experiências digitais memoráveis.
+                        </p>
+
+                        <h4 class="skills-heading">Tecnologias & Habilidades em Destaque</h4>
+                        <div id="profile-skills-list" class="skills-wrap">
+                            <!-- Renderizado dinamicamente via Contact.renderProfile() -->
+                        </div>
+                    </div>
+
+                    <!-- Métricas e Estatísticas -->
+                    <div class="stats-cards">
+                        <div class="stat-card">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Compromisso & Qualidade</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">Modern</div>
+                            <div class="stat-label">Stack Tecnológica</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">+10</div>
+                            <div class="stat-label">Projetos & Aplicações</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">Fast</div>
+                            <div class="stat-label">Entrega & Responsividade</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO PROJETOS -->
+        <section class="section" id="projects">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Portfólio</span>
+                    <h2 class="section-title">Projetos em Destaque</h2>
+                    <p class="section-desc">Uma seleção de trabalhos e sistemas web criados com as melhores práticas de
+                        design, arquitetura e usabilidade.</p>
+                </div>
+
+                <!-- Barra de Filtros e Busca -->
+                <div class="projects-filter-bar">
+                    <div class="filter-group">
+                        <button class="filter-btn active" data-filter="all">Todos</button>
+                        <button class="filter-btn" data-filter="Frontend">Frontend</button>
+                        <button class="filter-btn" data-filter="Full Stack">Full Stack</button>
+                        <button class="filter-btn" data-filter="Web App">Web App</button>
+                    </div>
+
+                    <div class="search-box">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="text" id="public-project-search" placeholder="Buscar projetos por nome ou tag...">
+                    </div>
+                </div>
+
+                <!-- Grid de Projetos Públicos -->
+                <div id="public-projects-grid" class="projects-grid">
+                    <!-- Renderizado dinamicamente via Projects.renderPublicProjects() -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO CONTATO -->
+        <section class="section bg-alt" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Contato</span>
+                    <h2 class="section-title">Vamos Construir Algo Incrível?</h2>
+                    <p class="section-desc">Fique à vontade para me enviar uma mensagem para conversarmos sobre
+                        projetos, contratações ou parcerias.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Coluna Informações de Contato -->
+                    <div class="contact-info-col">
+                        <h3>Canais Diretos</h3>
+                        <p>Escolha o melhor meio para entrar em contato ou envie uma mensagem direta pelo formulário ao
+                            lado.</p>
+
+                        <div class="contact-cards">
+                            <a href="#" class="contact-info-item profile-email">
+                                <div class="contact-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                        </path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span class="contact-label">E-mail</span>
+                                    <span class="contact-value profile-email">contato@exemplo.com</span>
+                                </div>
+                            </a>
+
+                            <a href="#" class="contact-info-item profile-phone">
+                                <div class="contact-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span class="contact-label">WhatsApp / Telefone</span>
+                                    <span class="contact-value profile-phone">+55 (11) 98765-4321</span>
+                                </div>
+                            </a>
+
+                            <div class="contact-info-item">
+                                <div class="contact-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span class="contact-label">Localização</span>
+                                    <span class="contact-value profile-location">Alagoas, Brasil</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulário Público de Contato -->
+                    <div class="card card-glass contact-form">
+                        <h3>Envie uma Mensagem</h3>
+                        <form id="public-contact-form">
+                            <div class="form-row-2">
+                                <div class="form-group">
+                                    <label for="contact-name">Seu Nome *</label>
+                                    <input type="text" id="contact-name" class="input-field"
+                                        placeholder="Ex: Maria Silva" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-email">Seu E-mail *</label>
+                                    <input type="email" id="contact-email" class="input-field"
+                                        placeholder="Ex: maria@empresa.com" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-subject">Assunto</label>
+                                <input type="text" id="contact-subject" class="input-field"
+                                    placeholder="Ex: Proposta de Projeto Freelance">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-message">Sua Mensagem *</label>
+                                <textarea id="contact-message" class="input-field textarea" rows="5"
+                                    placeholder="Olá! Gostaria de conversar sobre um projeto..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <span>Enviar Mensagem</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RODAPÉ PÚBLICO -->
+        <footer class="footer">
+            <div class="container footer-content">
+                <div>
+                    &copy; 2026 <strong class="profile-name">Andrey Alves</strong>. Todos os direitos reservados.
+                </div>
+                <div>
+                    <button class="footer-admin-link open-login-btn">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                        <span>Painel do Administrador</span>
+                    </button>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- =========================================================================
+       VISÃO ADMINISTRATIVA (PAINEL DE CONTROLE)
+       ========================================================================= -->
+    <div id="view-admin" class="view-admin hidden">
+
+        <!-- BARRA SUPERIOR DO ADMIN -->
+        <header class="admin-topbar">
+            <div class="admin-topbar-inner">
+                <div class="admin-brand">
+                    <span class="logo-accent">Portfólio</span>
+                    <span>Admin</span>
+                    <span class="admin-tag">Gerenciador</span>
+                </div>
+
+                <div class="admin-user-controls">
+                    <button class="btn btn-sm btn-secondary btn-back-to-public">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                        <span>Ver Portfólio</span>
+                    </button>
+
+                    <div class="admin-profile-pill">
+                        <span class="user-avatar-sm">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </span>
+                        <span id="admin-user-name">Administrador</span>
+                    </div>
+
+                    <button id="btn-logout" class="btn btn-sm btn-ghost text-danger">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                            <polyline points="16 17 21 12 16 7"></polyline>
+                            <line x1="21" y1="12" x2="9" y2="12"></line>
+                        </svg>
+                        <span>Sair</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- CONTAINER PRINCIPAL DO PAINEL -->
+        <main class="container admin-container">
+
+            <!-- NAVEGAÇÃO POR ABAS DO ADMIN -->
+            <div class="admin-nav-tabs">
+                <button class="admin-tab-btn active" data-tab="projects">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                    <span>Projetos (<span id="stat-total-projects">0</span>)</span>
+                </button>
+
+                <button class="admin-tab-btn" data-tab="messages">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <span>Mensagens (<span id="stat-total-messages">0</span>)</span>
+                    <span id="badge-unread-messages" class="tab-badge hidden">0</span>
+                </button>
+
+                <button class="admin-tab-btn" data-tab="profile">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span>Perfil & Habilidades</span>
+                </button>
+
+                <button class="admin-tab-btn" data-tab="settings">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path
+                            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                        </path>
+                    </svg>
+                    <span>Backup & Configurações</span>
+                </button>
+            </div>
+
+            <!-- ABA 1: PROJETOS -->
+            <section id="tab-pane-projects" class="admin-tab-pane active">
+                <div class="admin-section-header">
+                    <div>
+                        <h2>Gerenciador de Projetos</h2>
+                        <p>Cadastre novos trabalhos, altere imagens, links e mantenha seu catálogo atualizado.</p>
+                    </div>
+                    <button id="btn-new-project" class="btn btn-primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                        <span>Novo Projeto</span>
+                    </button>
+                </div>
+
+                <div class="admin-toolbar">
+                    <div class="search-box">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="text" id="admin-project-search"
+                            placeholder="Filtrar projetos por título, tag ou categoria...">
+                    </div>
+                </div>
+
+                <!-- Lista dinâmica dos projetos no painel -->
+                <div id="admin-projects-list" class="admin-projects-list">
+                    <!-- Renderizado via Projects.renderAdminProjects() -->
+                </div>
+            </section>
+
+            <!-- ABA 2: MENSAGENS -->
+            <section id="tab-pane-messages" class="admin-tab-pane">
+                <div class="admin-section-header">
+                    <div>
+                        <h2>Caixa de Entrada de Mensagens</h2>
+                        <p>Contatos e propostas enviadas através do formulário público do seu portfólio.</p>
+                    </div>
+                </div>
+
+                <!-- Lista dinâmica de mensagens -->
+                <div id="admin-messages-list" class="admin-messages-list">
+                    <!-- Renderizado via Contact.renderAdminMessages() -->
+                </div>
+            </section>
+
+            <!-- ABA 3: PERFIL & HABILIDADES -->
+            <section id="tab-pane-profile" class="admin-tab-pane">
+                <div class="admin-section-header">
+                    <div>
+                        <h2>Informações do Perfil & Contato</h2>
+                        <p>Atualize seus dados pessoais, redes sociais e competências exibidas publicamente.</p>
+                    </div>
+                </div>
+
+                <form id="form-edit-profile" class="card">
+                    <div class="form-row-2">
+                        <div class="form-group">
+                            <label for="edit-profile-name">Nome Completo *</label>
+                            <input type="text" id="edit-profile-name" class="input-field" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-profile-role">Cargo / Título Profissional *</label>
+                            <input type="text" id="edit-profile-role" class="input-field" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-profile-bio">Biografia & Apresentação</label>
+                        <textarea id="edit-profile-bio" class="input-field textarea" rows="3"></textarea>
+                    </div>
+
+                    <div class="form-row-3">
+                        <div class="form-group">
+                            <label for="edit-profile-email">E-mail de Contato *</label>
+                            <input type="email" id="edit-profile-email" class="input-field" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-profile-phone">WhatsApp / Telefone</label>
+                            <input type="text" id="edit-profile-phone" class="input-field">
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-profile-location">Localização (Cidade / Estado)</label>
+                            <input type="text" id="edit-profile-location" class="input-field">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-profile-avatar">URL da Foto de Perfil</label>
+                        <input type="url" id="edit-profile-avatar" class="input-field" placeholder="https://...">
+                    </div>
+
+                    <div class="form-row-3">
+                        <div class="form-group">
+                            <label for="edit-profile-github">Link do GitHub</label>
+                            <input type="url" id="edit-profile-github" class="input-field"
+                                placeholder="https://github.com/...">
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-profile-linkedin">Link do LinkedIn</label>
+                            <input type="url" id="edit-profile-linkedin" class="input-field"
+                                placeholder="https://linkedin.com/in/...">
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-profile-website">Website / Domínio</label>
+                            <input type="url" id="edit-profile-website" class="input-field" placeholder="https://...">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-profile-skills">Habilidades & Tecnologias (separadas por vírgula)</label>
+                        <input type="text" id="edit-profile-skills" class="input-field"
+                            placeholder="Ex: JavaScript, React, CSS3, Node.js, UI/UX">
+                    </div>
+
+                    <div class="modal-footer" style="padding-top: 1rem; margin-top: 1rem;">
+                        <button type="submit" class="btn btn-primary">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Salvar Alterações do Perfil</span>
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- ABA 4: CONFIGURAÇÕES & BACKUP -->
+            <section id="tab-pane-settings" class="admin-tab-pane">
+                <div class="admin-section-header">
+                    <div>
+                        <h2>Configurações do Sistema & Backup</h2>
+                        <p>Gerencie backups locais dos seus dados, restaure configurações ou retorne ao modelo inicial.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="settings-grid">
+                    <div class="card settings-card">
+                        <div class="settings-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                        </div>
+                        <h3>Exportar Backup</h3>
+                        <p>Baixe todos os seus projetos, perfil e mensagens em formato JSON para salvar no seu
+                            computador.</p>
+                        <button id="btn-export-data" class="btn btn-primary">
+                            <span>Exportar Dados (JSON)</span>
+                        </button>
+                    </div>
+
+                    <div class="card settings-card">
+                        <div class="settings-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="17 8 12 3 7 8"></polyline>
+                                <line x1="12" y1="3" x2="12" y2="15"></line>
+                            </svg>
+                        </div>
+                        <h3>Importar Backup</h3>
+                        <p>Restaure seus dados a partir de um arquivo JSON previamente exportado.</p>
+                        <input type="file" id="file-import-data" accept=".json" class="hidden">
+                        <label for="file-import-data" class="btn btn-secondary" style="cursor: pointer;">
+                            <span>Selecionar Arquivo de Backup</span>
+                        </label>
+                    </div>
+
+                    <div class="card settings-card danger-card">
+                        <div class="settings-icon text-danger">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M3 6h18"></path>
+                                <path
+                                    d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3>Restaurar Demonstração</h3>
+                        <p>Deseja resetar todos os dados para o portfólio modelo original com projetos e dados de
+                            exemplo?</p>
+                        <button id="btn-reset-defaults" class="btn btn-outline text-danger">
+                            <span>Restaurar Modelo Padrão</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- =========================================================================
+       MODAL DE AUTENTICAÇÃO (LOGIN / REGISTRO)
+       ========================================================================= -->
+    <div id="auth-modal" class="modal-backdrop">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="auth-modal-title">Acessar Painel</h3>
+                <button id="close-auth-modal" class="modal-close" aria-label="Fechar">&times;</button>
+            </div>
+
+            <!-- Abas Login / Cadastro -->
+            <div class="auth-tabs">
+                <button id="tab-login" class="auth-tab-btn active">Entrar</button>
+                <button id="tab-register" class="auth-tab-btn">Criar Conta</button>
+            </div>
+
+            <!-- Dica de demonstração -->
+            <div class="demo-login-box">
+                <div><strong>Credenciais de Demonstração:</strong></div>
+                <div>E-mail: <code>admin@portfolio.com</code> | Senha: <code>admin123</code></div>
+                <button type="button" id="btn-fill-demo" class="btn-demo-link">Preencher credenciais
+                    automaticamente</button>
+            </div>
+
+            <!-- Formulário de Login -->
+            <form id="form-login">
+                <div class="form-group">
+                    <label for="login-email">E-mail</label>
+                    <input type="email" id="login-email" class="input-field" placeholder="seu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Senha</label>
+                    <input type="password" id="login-password" class="input-field" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Entrar no Painel</button>
+            </form>
+
+            <!-- Formulário de Cadastro -->
+            <form id="form-register" class="hidden">
+                <div class="form-group">
+                    <label for="reg-name">Nome Completo</label>
+                    <input type="text" id="reg-name" class="input-field" placeholder="Ex: Carlos Eduardo" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-email">E-mail</label>
+                    <input type="email" id="reg-email" class="input-field" placeholder="seu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-password">Senha (mínimo 6 caracteres)</label>
+                    <input type="password" id="reg-password" class="input-field" placeholder="••••••••" minlength="6"
+                        required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Criar Conta e Acessar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- =========================================================================
+       MODAL DE PROJETO (CRIAR / EDITAR)
+       ========================================================================= -->
+    <div id="project-modal" class="modal-backdrop">
+        <div class="modal-box modal-lg">
+            <div class="modal-header">
+                <h3 id="project-modal-title">Adicionar Novo Projeto</h3>
+                <button id="close-project-modal" class="modal-close" aria-label="Fechar">&times;</button>
+            </div>
+
+            <form id="form-project">
+                <div class="form-group">
+                    <label for="proj-title">Título do Projeto *</label>
+                    <input type="text" id="proj-title" class="input-field" placeholder="Ex: Plataforma SaaS de Métricas"
+                        required>
+                </div>
+
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label for="proj-category">Categoria Principal *</label>
+                        <select id="proj-category" class="input-field">
+                            <option value="Frontend">Frontend</option>
+                            <option value="Full Stack">Full Stack</option>
+                            <option value="Web App">Web App</option>
+                            <option value="Mobile">Mobile</option>
+                            <option value="UI/UX">UI/UX</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="proj-tags">Tags e Tecnologias (separadas por vírgula)</label>
+                        <input type="text" id="proj-tags" class="input-field"
+                            placeholder="Ex: JavaScript, React, APIs, CSS">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="proj-description">Descrição Detalhada *</label>
+                    <textarea id="proj-description" class="input-field textarea" rows="3"
+                        placeholder="Descreva os objetivos, recursos e desafios solucionados pelo projeto..."
+                        required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="proj-image">Imagem de Capa (URL da Imagem ou Upload)</label>
+                    <div class="image-input-group">
+                        <input type="url" id="proj-image" class="input-field"
+                            placeholder="https://images.unsplash.com/...">
+                    </div>
+                    <div style="margin-top: 0.5rem;">
+                        <input type="file" id="proj-image-file" accept="image/*" class="input-field"
+                            style="padding: 0.4rem 0.6rem; font-size: 0.85rem;">
+                    </div>
+                    <img id="project-image-preview" class="image-preview hidden" alt="Prévia da imagem selecionada">
+                </div>
+
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label for="proj-demo">Link da Demonstração Online (Demo URL)</label>
+                        <input type="url" id="proj-demo" class="input-field" placeholder="https://meuprojeto.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="proj-github">Link do Repositório (GitHub)</label>
+                        <input type="url" id="proj-github" class="input-field"
+                            placeholder="https://github.com/usuario/repo">
+                    </div>
+                </div>
+
+                <div class="form-group-checkbox">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="proj-featured">
+                        <span class="custom-checkbox"></span>
+                        <span>Destacar este projeto no topo da página inicial</span>
+                    </label>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" id="btn-cancel-project" class="btn btn-secondary">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Salvar Projeto</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- =========================================================================
+       CONTAINER DE NOTIFICAÇÕES (TOASTS)
+       ========================================================================= -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- =========================================================================
+       SCRIPTS DA APLICAÇÃO (EM ORDEM DE DEPENDÊNCIA)
+       ========================================================================= -->
+    <script src="js/storage.js?v=2"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="js/contact.js?v=2"></script>
+    <script src="js/app.js?v=2"></script>
+
+</body>
+
+</html>
